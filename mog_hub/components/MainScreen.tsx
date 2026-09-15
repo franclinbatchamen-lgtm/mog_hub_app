@@ -8,7 +8,7 @@ import { RadioButton } from 'react-native-paper';
 function MainScreen(){
 
  const [petName, setPetName] = useState('');
- const [selectedValue, setSelectedVlaue] = useState('0')
+ const [selectedValue, setSelectedValue] = useState('0')
 
  return(
   <View>
@@ -37,14 +37,45 @@ function MainScreen(){
                 <View style={styles.raidoGroup}>
                     {/* raido button for cat */}
                     <View style={styles.radioBtn}>
+                        <RadioButton.IOS
+                            value="1"
+                            status={selectedValue == "1" ? 'checked' : 'unchecked'}
+                            onPress={() => setSelectedValue('1')}
+                            color='orange'
+
+                        
+                        />
+                        <Text style={styles.raidoLabel}>Cat</Text>
 
                     </View>
+
+                    {/* ------------------------------------------------------------------------------------------------------- */}
                     {/* raido button for dog */}
                      <View style={styles.radioBtn}>
+                        <RadioButton.IOS
+                            value="3"
+                            status={selectedValue == "2" ? 'checked' : 'unchecked'}
+                            onPress={() => setSelectedValue('2')}
+                            color='orange'
+                            
+                        
+                        />
+                        <Text style={styles.raidoLabel}>Dog</Text>
 
                     </View>
+
+                    {/* ------------------------------------------------------------------------------------------------------- */}
                     {/* raido button for other */}
                      <View style={styles.radioBtn}>
+                        <RadioButton.IOS
+                            value="3"
+                            status={selectedValue == "3" ? 'checked' : 'unchecked'}
+                            onPress={() => setSelectedValue('3')}
+                            color='orange'
+                            
+                        
+                        />
+                        <Text style={styles.raidoLabel}>Other</Text>
 
                     </View>
 
