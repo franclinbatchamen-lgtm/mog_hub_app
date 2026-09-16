@@ -9,13 +9,32 @@ function MainScreen(){
 
  const [petName, setPetName] = useState('');
  const [selectedValue, setSelectedValue] = useState('0')
+//  creating an array
+ const [pet, setPet] = useState<string[]>([]);
+
+ const renderPets = () => {
+    const arrDisplay = [];
+
+    for (let i = 0; i < pet.length; i++){
+        arrDisplay.push(
+            <View key={i} style={styles.inputContainer}>
+                <Text style={styles.petTxt}>
+                    {pet[i]}
+
+                </Text>
+               
+            </View>
+        )
+    }
+    return arrDisplay
+ }
 
  return(
   <View>
     <SafeAreaView>
       <ScrollView>
         <Image style={styles.mogHubLogo}
-        source={require('./images/DAWG pic.jpg')}/>
+        source={require('../images/DAWG pic.jpg')}/>
         <Text style={styles.mainTxt}>Mog hub</Text>
         <Text style={styles.slogan}>P u r r f e c t  C o m p a n i o n s</Text>
 
@@ -35,6 +54,7 @@ function MainScreen(){
 
             <View style={styles.radioContainer}>
                 <View style={styles.raidoGroup}>
+                    {/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
                     {/* raido button for cat */}
                     <View style={styles.radioBtn}>
                         <RadioButton.IOS
@@ -49,7 +69,7 @@ function MainScreen(){
 
                     </View>
 
-                    {/* ------------------------------------------------------------------------------------------------------- */}
+                    {/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
                     {/* raido button for dog */}
                      <View style={styles.radioBtn}>
                         <RadioButton.IOS
@@ -64,7 +84,7 @@ function MainScreen(){
 
                     </View>
 
-                    {/* ------------------------------------------------------------------------------------------------------- */}
+                    {/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */}
                     {/* raido button for other */}
                      <View style={styles.radioBtn}>
                         <RadioButton.IOS
