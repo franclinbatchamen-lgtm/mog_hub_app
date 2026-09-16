@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, ScrollView, TextInput, SafeAreaView, Image } from 'react-native';
+import { Text, View, ScrollView, TextInput, SafeAreaView, Image, Button } from 'react-native';
 import { useState } from 'react';
 import styles from './Styles'
 import { RadioButton } from 'react-native-paper';
@@ -106,6 +106,19 @@ function MainScreen(){
         </View>
 
         <StatusBar style="auto" />
+
+        <Button title = "Add Pet"
+             onPress ={() => {
+                setPet ([...pet, petName]);
+                setPetName("");
+             }}
+             
+             />
+             <View style= {styles.container}>
+                {renderPets()}
+             </View>
+
+        
       </ScrollView>
     </SafeAreaView>
   </View>
